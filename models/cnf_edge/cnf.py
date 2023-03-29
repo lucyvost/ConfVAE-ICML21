@@ -34,8 +34,8 @@ class CNF(nn.Module):
             _logpx = logpx
 
         states = (x, _logpx, node_attr, edge_attr)
-        atol = [self.atol] * 3
-        rtol = [self.rtol] * 3
+        atol = self.atol
+        rtol = self.rtol #changed these two lines per github suggestion
 
         if integration_times is None:
             if self.train_T:
